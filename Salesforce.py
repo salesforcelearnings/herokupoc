@@ -10,6 +10,7 @@ PASSWORD = os.getenv('PASSWORD');
 SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
 
 def main():
+    return SALESFORCE_USERNAME
     # Authentication settings details33
     sf = Salesforce(username=SALESFORCE_USERNAME,
                     password=PASSWORD,
@@ -51,7 +52,7 @@ def main():
                     data['CreatedDate'] = d.strftime('%Y-%m-%d %H:%M:%S')
                     writer.writerow(data)
 
-    return "Hello, world!"
+
 if __name__ == '__main__':
     main()
 
