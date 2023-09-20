@@ -1,11 +1,13 @@
 from simple_salesforce import Salesforce
 from datetime import datetime
-from dotenv import load_dotenv
 import csv
 import os
 import json
 
-load_dotenv()
+if not os.environ.get("PRODUCTION"):
+    from dotenv import load_dotenv
+    load_dotenv()
+
 SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
 PASSWORD = os.getenv('PASSWORD');
 SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
