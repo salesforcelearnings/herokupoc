@@ -33,7 +33,8 @@ def main():
     ]
     sosl = 'SELECT {0[0]}, {0[1]}, {0[2]}, {0[3]}, {0[4]}, {0[5]}, {0[6]} , {0[7]} FROM Lead '.format(
         columns)
-
+    data = [{'Saluation': 'Mr.', 'LastName': 'Demo Call', 'Company': 'Test', 'Status': 'Open - Not Contacted'}]
+    sf.bulk.Lead.insert(data)
     # Data acquisition with SOSL Implementation
     data = sf.query_all(sosl)
 
