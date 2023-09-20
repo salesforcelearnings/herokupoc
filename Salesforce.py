@@ -32,7 +32,7 @@ def main():
     # Data acquisition with SOSL
     data = sf.query_all(sosl)
 
-    # Delete CSV file if it exists
+    # Delete CSV file if it exists1
     output_csv = 'output.csv'
     if os.path.exists(output_csv):
         os.remove(output_csv)
