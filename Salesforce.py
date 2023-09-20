@@ -51,7 +51,7 @@ def main():
                     data['CreatedDate'] = d.strftime('%Y-%m-%d %H:%M:%S')
                     writer.writerow(data)
 
-
+    return "Hello, world!"
 if __name__ == '__main__':
     main()
 
