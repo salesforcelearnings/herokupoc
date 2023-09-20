@@ -11,6 +11,9 @@ SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
 
 def main():
     print('Please wait while the program is loading...')
+    print(SALESFORCE_USERNAME)
+    print(PASSWORD)
+    print(SECURITY_TOKEN)
     #return SALESFORCE_USERNAME
     # Authentication settings details33
     sf = Salesforce(username=SALESFORCE_USERNAME,
