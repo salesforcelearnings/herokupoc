@@ -3,7 +3,7 @@ from datetime import datetime
 import csv
 import os
 import json
-import account
+
 
 SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
 PASSWORD = os.getenv('PASSWORD');
