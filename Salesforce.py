@@ -29,7 +29,7 @@ def main():
     sosl = 'SELECT {0[0]}, {0[1]}, {0[2]}, {0[3]}, {0[4]}, {0[5]}, {0[6]} , {0[7]} FROM Lead '.format(
         columns)
 
-    # Data acquisition with SOSL
+    # Data acquisition with SOSL Implementation
     data = sf.query_all(sosl)
 
     # Delete CSV file if it exists1
