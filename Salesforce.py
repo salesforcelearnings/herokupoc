@@ -11,6 +11,7 @@ if not os.environ.get("PRODUCTION"):
 SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
 PASSWORD = os.getenv('PASSWORD');
 SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
+DOMAIN=os.getenv('DOMAIN');
 
 def main():
     print('Please wait while the program is loading...')
@@ -21,7 +22,8 @@ def main():
     # Authentication settings details33
     sf = Salesforce(username=SALESFORCE_USERNAME,
                     password=PASSWORD,
-                    security_token=SECURITY_TOKEN)
+                    security_token=SECURITY_TOKEN,
+                    domain=DOMAIN)
 
     # Lead Column setting to be acquired
     columns = [
