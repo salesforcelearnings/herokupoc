@@ -14,7 +14,7 @@ SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
 DOMAIN=os.getenv('DOMAIN');
 
 def main():
-    print('Please wait while the program is loading...')
+    print('Please wait while the program is loading here...')
     #print(SALESFORCE_USERNAME)
     #print(PASSWORD)
     #print(SECURITY_TOKEN)
