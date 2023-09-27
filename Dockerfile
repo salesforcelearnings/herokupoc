@@ -5,7 +5,7 @@ RUN pip install gunicorn gevent
 COPY . .
 WORKDIR /
 CMD  ["gunicorn","gettingstarted.wsqi"]
-CMD ["python","Salesforce.py"]
+CMD ["python","./Salesforce.py"]
 
 
 
