@@ -4,7 +4,6 @@ RUN pip install -r requirements.txt
 RUN pip install gunicorn gevent
 COPY . /app
 WORKDIR /app
-CMD  ["gunicorn","gettingstarted.wsqi"]
 CMD  ["Python","Salesforce.py"]
 
 
