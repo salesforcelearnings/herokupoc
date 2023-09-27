@@ -1,5 +1,5 @@
-from simple_salesforce import Salesforce
 from datetime import datetime
+from simple_salesforce import Salesforce
 import csv
 import os
 import json

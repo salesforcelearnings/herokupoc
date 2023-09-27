@@ -4,7 +4,8 @@ RUN pip install -r requirements.txt
 RUN pip install gunicorn gevent
 COPY . /app
 WORKDIR /app
-CMD  ["Python","Salesforce.py"]
+ENTRYPOINT ["python"]
+CMD ["Salesforce.py"]
 
 
 
