@@ -1,7 +1,6 @@
 build:
   docker:
-    worker: Worker/Dockerfile
-    web: Dockerfile
+    worker: Dockerfile
 run:
   worker:
     command:
