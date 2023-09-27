@@ -1,10 +1,10 @@
-FROM python:3.6-slim-buster
+FROM --platform=linux/amd64 python:latest
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install gunicorn gevent
-COPY . /app
-WORKDIR /app
-CMD  ["Python","Salesforce.py"]
+COPY . .
+CMD  ["gunicorn","gettingstarted.wsqi"]
+CMD ["python","Salesforce.py"]
 
 
 
