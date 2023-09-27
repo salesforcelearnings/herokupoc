@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:latest
+FROM --platform=linux/amd64 python:3.6-slim-buster
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 RUN pip install gunicorn gevent
