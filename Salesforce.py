@@ -15,9 +15,9 @@ DOMAIN=os.getenv('DOMAIN');
 
 def main():
     print('Please wait while the program is loading...')
-    print(SALESFORCE_USERNAME)
-    print(PASSWORD)
-    print(SECURITY_TOKEN)
+    #print(SALESFORCE_USERNAME)
+    #print(PASSWORD)
+    #print(SECURITY_TOKEN)
     #return SALESFORCE_USERNAME
     # Authentication settings details33
     sf = Salesforce(username=SALESFORCE_USERNAME,
@@ -38,7 +38,11 @@ def main():
     ]
     sosl = 'SELECT {0[0]}, {0[1]}, {0[2]}, {0[3]}, {0[4]}, {0[5]}, {0[6]} , {0[7]} FROM Lead '.format(
         columns)
-    data = [{'LastName': 'Demo Call', 'Company': 'Test', 'Status': 'Open - Not Contacted'}]
+    lastName = input('Enter Last Name : ')
+    leadStatus = input('Enter Status  : ')
+    companyName = input('Enter Company Name  : ')
+    #data = [{'LastName': 'Demo Call', 'Company': 'Test', 'Status': 'Open - Not Contacted'}]
+    data = [{'LastName': lastName, 'Company': companyName, 'Status': leadStatus}]
     x = sf.bulk.Lead.insert(data, batch_size=10000, use_serial=True)
     print(x)
     # Data acquisition with SOSL Implementation
