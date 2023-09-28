@@ -8,10 +8,15 @@ if not os.environ.get("PRODUCTION"):
     from dotenv import load_dotenv
     load_dotenv()
 
+#SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
+#PASSWORD = os.getenv('PASSWORD');
+#SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
+#DOMAIN=os.getenv('DOMAIN');
+
 SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
 PASSWORD = os.getenv('PASSWORD');
 SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
-DOMAIN=os.getenv('DOMAIN');
+DOMAIN = os.getenv('DOMAIN');
 
 def main():
     print('Please wait while the program is loading here...')
@@ -70,4 +75,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
