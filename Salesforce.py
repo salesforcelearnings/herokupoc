@@ -19,7 +19,7 @@ SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
 DOMAIN = os.getenv('DOMAIN');
 
 def main():
-    print('Please wait while the program is loading here...')
+    print('Please wait ...')
     #print(SALESFORCE_USERNAME)
     #print(PASSWORD)
     #print(SECURITY_TOKEN)
@@ -43,11 +43,8 @@ def main():
     ]
     sosl = 'SELECT {0[0]}, {0[1]}, {0[2]}, {0[3]}, {0[4]}, {0[5]}, {0[6]} , {0[7]} FROM Lead '.format(
         columns)
-    lastName = input('Enter Last Name : ')
-    leadStatus = input('Enter Status  : ')
-    companyName = input('Enter Company Name  : ')
-    #data = [{'LastName': 'Demo Call', 'Company': 'Test', 'Status': 'Open - Not Contacted'}]
-    data = [{'LastName': lastName, 'Company': companyName, 'Status': leadStatus}]
+
+    data = [{'LastName': 'Pipeline Demo', 'Company': 'Heroku', 'Status': 'Open - Not Contacted'}]
     x = sf.bulk.Lead.insert(data, batch_size=10000, use_serial=True)
     print(x)
     # Data acquisition with SOSL Implementation
