@@ -45,7 +45,6 @@ def main():
         columns)
 
     data = [{'LastName': 'Pipeline Demo', 'Company': 'Heroku', 'Status': 'Open - Not Contacted'}]
-    #data = [{'LastName': lastName, 'Company': companyName, 'Status': leadStatus}]
     x = sf.bulk.Lead.insert(data, batch_size=10000, use_serial=True)
     print(x)
     # Data acquisition with SOSL Implementation
