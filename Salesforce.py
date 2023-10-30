@@ -1,5 +1,5 @@
-from datetime import datetime
 from simple_salesforce import Salesforce
+from datetime import datetime
 import csv
 import os
 import json
@@ -8,21 +8,16 @@ if not os.environ.get("PRODUCTION"):
     from dotenv import load_dotenv
     load_dotenv()
 
-#SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
-#PASSWORD = os.getenv('PASSWORD');
-#SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
-#DOMAIN=os.getenv('DOMAIN');
-
 SALESFORCE_USERNAME = os.getenv('SALESFORCE_USERNAME');
 PASSWORD = os.getenv('PASSWORD');
 SECURITY_TOKEN = os.getenv('SECURITY_TOKEN');
-DOMAIN = os.getenv('DOMAIN');
+DOMAIN=os.getenv('DOMAIN');
 
 def main():
-    print('Please wait ...')
-    #print(SALESFORCE_USERNAME)
-    #print(PASSWORD)
-    #print(SECURITY_TOKEN)
+    print('Please wait while the program is loading...')
+    print(SALESFORCE_USERNAME)
+    print(PASSWORD)
+    print(SECURITY_TOKEN)
     #return SALESFORCE_USERNAME
     # Authentication settings details33
     sf = Salesforce(username=SALESFORCE_USERNAME,
@@ -43,8 +38,7 @@ def main():
     ]
     sosl = 'SELECT {0[0]}, {0[1]}, {0[2]}, {0[3]}, {0[4]}, {0[5]}, {0[6]} , {0[7]} FROM Lead '.format(
         columns)
-
-    data = [{'LastName': 'Pipeline Demo', 'Company': 'Heroku', 'Status': 'Open - Not Contacted'}]
+    data = [{'LastName': 'Demo Call', 'Company': 'Test', 'Status': 'Open - Not Contacted'}]
     x = sf.bulk.Lead.insert(data, batch_size=10000, use_serial=True)
     print(x)
     # Data acquisition with SOSL Implementation
@@ -67,10 +61,9 @@ def main():
                     d = datetime.strptime(
                         data['CreatedDate'], '%Y-%m-%dT%H:%M:%S.%f%z')
                     data['CreatedDate'] = d.strftime('%Y-%m-%d %H:%M:%S')
-                    writer.writerow(data)
+                    #writer.writerow(data)
 
 
 if __name__ == '__main__':
     main()
-
 
